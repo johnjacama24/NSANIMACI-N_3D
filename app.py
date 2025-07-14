@@ -63,6 +63,10 @@ if st.button("🔍 Realizar predicción"):
         fila["Estrato"] = estrato
 
         entrada = pd.DataFrame([fila])
+        
+        if "Nivel de Desercion" in entrada.columns:
+            entrada = entrada.drop(columns=["Nivel de Desercion"])
+            
         pred_codificada = modelo.predict(entrada)[0]
 
         st.write(f"🔢 Número de Cluster:", pred_codificada)
