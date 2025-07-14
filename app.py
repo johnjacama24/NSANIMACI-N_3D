@@ -60,6 +60,7 @@ if st.button("🔍 Realizar predicción"):
         fila["Género"] = dicc_genero[genero_opcion]
         fila["Estado Civil"] = dicc_estado_civil[estado_civil_opcion]
         fila["Estado Aprendiz"] = dicc_estado_aprendiz[estado_aprendiz_opcion]
+        fila["Estrato"] = estrato
 
         entrada = pd.DataFrame([fila])
         pred_codificada = modelo.predict(entrada)[0]
